@@ -1,9 +1,23 @@
-async function getPosts() { 
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts'); 
-  return res.json(); 
-} 
+import BlogCard from "@/components/BlogCard";
 
-export default async function HomePage() { 
-  const posts = await getPosts(); 
-  // ... render ... 
+async function getPosts() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+  return res.json();
+}
+
+export default async function HomePage() {
+  const posts = await getPosts();
+
+  return (
+    <main className="max-w-7xl mx-auto py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        {posts.slice(0, 12).map((post) => (
+          <BlogCard key={post.id} post={post} />
+        ))}
+      </div>
+    </main>
+  );
 }
