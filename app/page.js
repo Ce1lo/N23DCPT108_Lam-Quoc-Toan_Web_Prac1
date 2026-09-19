@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 import Badge from "@/components/Badge";
 import Reveal from "@/components/Reveal";
@@ -46,12 +47,12 @@ export default async function HomePage() {
                     {latest.body}
                   </p>
                   <div>
-                    <a
+                    <Link
                       href={`/blog/${latest.id}`}
                       className="inline-block bg-[#111111] text-white px-5 py-2.5 rounded-md text-[13px] font-medium hover:bg-[#333333] active:scale-[0.98] transition-all"
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -65,12 +66,12 @@ export default async function HomePage() {
         <Reveal>
           <div className="flex items-end justify-between mb-8">
             <h2 className="font-serif-ed text-[26px] text-[#111111]">More posts</h2>
-            <a
+            <Link
               href="/articles"
               className="text-[13px] font-medium text-[#37352F] hover:text-black transition-colors"
             >
               View all articles
-            </a>
+            </Link>
           </div>
         </Reveal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
