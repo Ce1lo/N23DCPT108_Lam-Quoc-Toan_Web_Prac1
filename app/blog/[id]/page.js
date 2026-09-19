@@ -24,7 +24,7 @@ export default async function BlogDetail({ params }) {
   return (
     <main className="max-w-3xl mx-auto px-6 py-14">
       <Link
-        href="/"
+        href="/articles"
         className="inline-block mb-8 border border-[#EAEAEA] bg-white text-[#37352F] px-4 py-2 rounded-md text-[13px] font-medium hover:border-[#111111] transition-colors"
       >
         Back to Blog

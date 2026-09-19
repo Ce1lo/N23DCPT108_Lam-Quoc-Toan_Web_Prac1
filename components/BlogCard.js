@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Badge from "./Badge";
 import Reveal from "./Reveal";
 
@@ -32,12 +33,12 @@ export default function BlogCard({ post, index = 0 }) {
           <span className="font-mono-meta text-[11px] text-[#787774]">
             #{String(post.id).padStart(2, "0")}
           </span>
-          <a
+          <Link
             href={`/blog/${post.id}`}
             className="bg-[#111111] text-white px-3 py-1.5 rounded-md text-[13px] font-medium hover:bg-[#333333] active:scale-[0.98] transition-all"
           >
             Read More
-          </a>
+          </Link>
         </div>
       </article>
     </Reveal>
