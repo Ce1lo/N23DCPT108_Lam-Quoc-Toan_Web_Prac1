@@ -13,19 +13,22 @@ export default async function BlogDetail({ params }) {
   const post = await getPost(id);
 
   return (
-    <main className="max-w-3xl mx-auto p-6">
+    <main className="max-w-3xl mx-auto px-6 py-14">
       <Link
         href="/"
-        className="inline-block mb-6 bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm hover:bg-gray-300"
+        className="inline-block mb-8 border border-[#EAEAEA] bg-white text-[#37352F] px-4 py-2 rounded-md text-[13px] font-medium hover:border-[#111111] transition-colors"
       >
         Back to Blog
       </Link>
-      <span className="block text-xs text-indigo-500 font-semibold uppercase tracking-wide mb-2">
-        {post.category}
-      </span>
-      <h1 className="font-bold text-2xl md:text-3xl mb-2">{post.title}</h1>
-      <p className="text-sm text-gray-400 mb-6">User #{post.userId}</p>
-      <p className="text-gray-600 leading-7">{post.body}</p>
+      <p className="font-mono-meta text-[11px] uppercase tracking-[0.08em] text-[#787774] mb-3">
+        {post.category || `Note ${String(post.id).padStart(2, "0")}`} · User {post.userId}
+      </p>
+      <h1 className="font-serif-ed text-[32px] md:text-[40px] text-[#111111] mb-6">
+        {post.title}
+      </h1>
+      <div className="border-t border-[#EAEAEA] pt-6">
+        <p className="text-[15px] leading-7 text-[#37352F]">{post.body}</p>
+      </div>
     </main>
   );
 }
