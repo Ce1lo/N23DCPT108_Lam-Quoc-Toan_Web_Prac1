@@ -8,6 +8,15 @@ async function getPost(id) {
   return res.json();
 }
 
+export async function generateStaticParams() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+  const posts = await res.json();
+  return posts.map((post) => ({ id: String(post.id) }));
+}
+
 export default async function BlogDetail({ params }) {
   const { id } = await params;
   const post = await getPost(id);
