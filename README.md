@@ -18,7 +18,7 @@ npm run dev
 
 Mở [http://localhost:3000](http://localhost:3000) để xem trang chủ.
 
-Build bản production (static export, giống CI deploy lên GitHub Pages):
+Build bản production:
 
 ```bash
 npm run build
@@ -52,7 +52,5 @@ npm run build
 
 ## Ghi chú kỹ thuật
 
-- Dự án dùng Tailwind CSS v4 nên `app/globals.css` chỉ giữ dòng
-  `@import "tailwindcss";` (tương đương 3 dòng `@tailwind` của v3).
 - Link nội bộ dùng `next/link` để tương thích `basePath` khi deploy
   project site lên GitHub Pages.
