@@ -1,15 +1,19 @@
 export default function Header() {
   return (
-    <header className="flex justify-between items-center p-6 bg-white shadow-md">
-      <h1 className="text-2xl font-bold text-indigo-600">MyBlog</h1>
-      <nav className="space-x-6 hidden md:flex">
-        <a href="#" className="hover:text-indigo-500">Home</a>
-        <a href="#" className="hover:text-indigo-500">Articles</a>
-        <a href="#" className="hover:text-indigo-500">About</a>
-      </nav>
-      <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg">
-        Subscribe
-      </button>
+    <header className="sticky top-0 z-40 bg-[#FBFBFA]/90 backdrop-blur-sm border-b border-[#EAEAEA]">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" className="flex items-baseline gap-2">
+          <span className="font-serif-ed text-[22px] font-medium">MyBlog</span>
+        </a>
+        <nav className="space-x-6 hidden md:flex text-[14px] text-[#37352F]">
+          <a href="/" className="hover:text-black transition-colors">Home</a>
+          <a href="/articles" className="hover:text-black transition-colors">Articles</a>
+          <a href="/about" className="hover:text-black transition-colors">About</a>
+        </nav>
+        <button className="bg-[#111111] text-white text-[13px] font-medium px-4 py-2 rounded-md hover:bg-[#333333] active:scale-[0.98] transition-all">
+          Subscribe
+        </button>
+      </div>
     </header>
   );
 }

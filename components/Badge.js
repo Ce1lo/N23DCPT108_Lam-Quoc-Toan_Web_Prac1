@@ -1,9 +1,15 @@
+const tones = {
+  indigo: "bg-[#E1F3FE] text-[#1F6C9F]",
+  gray: "bg-[#F1F1EF] text-[#6B6B66]",
+};
+
 export default function Badge({ label, color = "indigo" }) {
-  const styles = color === "indigo"
-    ? "bg-indigo-100 text-indigo-700"
-    : "bg-gray-100 text-gray-600";
+  const tone = tones[color] || tones.indigo;
+
   return (
-    <span className={`${styles} text-xs font-semibold px-2 py-1 rounded-full`}>
+    <span
+      className={`inline-flex items-center text-[11px] font-medium uppercase tracking-[0.05em] px-2.5 py-1 rounded-full ${tone}`}
+    >
       {label}
     </span>
   );
